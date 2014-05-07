@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+</head>
+<body>
+	<div id="test" data-view-id="test"></div>
+
+	<script src="scripts/jquery.js"></script>
+	<script src="../src/silo.js"></script>
+
+	<script>
+		(function() {
+			console.log(silo.add('test', { hello: 'world!' }));
+			console.log(silo.add('test', { hello: 'world!' }));
+
+			console.dir(silo.findById('test'));
+			console.dir(silo.findByNode($('#test')));
+
+			silo.remove('test');
+
+			console.dir(silo.findById('test'));
+		}());
+	</script>
+</body>
+</html>
